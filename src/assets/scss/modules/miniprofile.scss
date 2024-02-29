@@ -1,0 +1,21 @@
+@import "{scss}/variables";
+@import "{scss}/mixins/breakpoints";
+
+.mini-profile {
+  cursor: pointer;
+
+  &__body {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    @include media-breakpoint-down(lg) {
+      flex-direction: column;
+    }
+  }
+
+  &__email, &__balance {
+    font-size: 2rem;
+    color: $color-gray-1;
+  }
+}

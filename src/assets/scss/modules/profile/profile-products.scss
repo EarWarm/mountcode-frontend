@@ -1,0 +1,54 @@
+@import "{scss}/variables";
+@import "{scss}/mixins/breakpoints";
+
+.profile-products {
+  margin-top: 10rem;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5rem;
+    margin-top: 3rem;
+
+    @include media-breakpoint-down(xxl) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include media-breakpoint-down(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-breakpoint-down(md) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.profile-product {
+  cursor: pointer;
+  background-color: $color-black-2;
+  border-radius: 3rem;
+  &__image {
+    width: 100%;
+    height: auto;
+    border-radius: 3rem 3rem 0 0;
+  }
+
+  &__info {
+    padding: 2rem;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: $color-white;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: $color-gray-1;
+  }
+}
+

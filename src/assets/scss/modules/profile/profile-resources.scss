@@ -1,0 +1,77 @@
+@import "{scss}/variables";
+
+.profile-resources {
+  margin-top: 10rem;
+
+  &__body {
+    background-color: $color-black-2;
+    padding: 2rem 2rem;
+    border-radius: 1rem;
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  &__archived {
+    font-size: 1.8rem;
+    color: $warning-color;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+  }
+
+  &__table {
+    width: 100%;
+  }
+
+  &__thead {
+    border-bottom: 2rem solid $color-black-2;
+
+    th {
+      font-size: 1.8rem;
+      color: $color-white;
+      padding: 1rem 0;
+
+      &:first-child {
+        padding-left: 1rem;
+      }
+
+      &:last-child {
+        padding-right: 1rem;
+      }
+    }
+  }
+
+  &__tbody {
+  }
+
+  &__resource {
+    transition: .15s all ease-in-out;
+    background-color: rgba($color: $color-black-1, $alpha: .5);
+    cursor: pointer;
+
+    &:hover {
+      transition: .15s all ease-in-out;
+      background-color: $color-black-1;
+    }
+
+    td {
+      font-size: 1.6rem;
+      color: $color-gray-1;
+      padding: 1rem 0;
+
+      &:first-child {
+        padding-left: 1rem;
+      }
+
+      &:last-child {
+        padding-right: 1rem;
+      }
+    }
+
+    &-empty {
+      cursor: default;
+      td {
+        text-align: center;
+      }
+    }
+  }
+}

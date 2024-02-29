@@ -1,0 +1,23 @@
+.highlighted-title {
+  display: flex;
+  align-items: center;
+  padding-top: .5rem;
+  margin-top: 2.2rem;
+  color: $color-gray-1;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 3rem;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    left: 0;
+    top: -2rem;
+    content: "";
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTkiIGhlaWdodD0iMTkiIHZpZXdCb3g9IjAgMCA5OSAxOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgOS42OTc2M0M1Ljc0MzM2IDkuNjk3NjMgMzAuMjM4MiAyNi4xMjggNDkuMzU0IDkuNjk3NjNDNjkuNTA0NCAtNy42MjIwNCA5My4xNTkzIDkuNjk3NjMgOTkgOS42OTc2MyIgc3Ryb2tlPSIjRUI1NzU3IiBzdHJva2Utd2lkdGg9IjQiLz4KPC9zdmc+Cg==");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 10rem;
+    height: 2rem;
+  }
+}

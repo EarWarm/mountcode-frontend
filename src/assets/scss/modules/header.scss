@@ -1,0 +1,54 @@
+@import "{scss}/variables";
+@import "{scss}/mixins/breakpoints";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: $color-black-2;
+  padding-right: 18rem;
+  align-items: center;
+
+  @include media-breakpoint-down(xxl) {
+    padding-right: 2rem;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+
+  &__link {
+    transition: .15s color ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: $color-gray-1;
+    font-weight: bold;
+
+    span, i {
+      font-size: 1.8rem;
+    }
+
+    &:hover {
+      transition: .15s color ease-in-out;
+      color: $color-blue-1;
+    }
+  }
+
+  &__logo {
+    background-color: $color-gray-2;
+    padding: 0.6rem 10rem 0.6rem 0.6rem;
+    clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 0% 100%);
+  }
+}

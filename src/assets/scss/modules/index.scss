@@ -1,0 +1,140 @@
+@import "{scss}/variables";
+@import "{scss}/mixins/breakpoints";
+
+.index {
+
+  &__title {
+    font-size: 4rem;
+    color: $color-white;
+    font-weight: 800;
+    line-height: 5rem;
+  }
+
+  &__description, &__description p {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    color: $color-gray-1;
+    line-height: 2rem;
+  }
+
+  &__products {
+    margin-top: 6.5rem;
+  }
+}
+.products {
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  &__name {
+    cursor: pointer;
+  }
+
+  &__categories {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  &__list {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5rem;
+
+    @include media-breakpoint-down(xxl) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include media-breakpoint-down(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-breakpoint-down(md) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__more {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+}
+
+.product {
+  background-color: $color-black-2;
+  display: flex;
+  flex-direction: column;
+
+  &__image {
+    border-bottom: .5rem solid rgba($color: $color-gray-1, $alpha: .10);
+    img {
+      width: 100%;
+    }
+  }
+
+  &__info {
+    flex-grow: 1;
+    padding: 1rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__top {
+    display: flex;
+    gap: .5rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__name {
+    color: $color-white;
+    font-size: 1.8rem;
+  }
+
+  &__category {
+    color: $color-gray-1;
+    font-size: 1.6rem;
+  }
+
+  &__description {
+    flex-grow: 1;
+    font-size: 1.6rem;
+    color: $color-gray-1;
+  }
+
+  &__buy {
+    padding: 0 1rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .2rem;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: $color-gray-1;
+
+    &:after {
+      content: "";
+      width: 130%;
+      height: .3rem;
+      background-color: $color-gray-1;
+    }
+  }
+
+  &__action {
+    padding: 1rem 2rem;
+  }
+}

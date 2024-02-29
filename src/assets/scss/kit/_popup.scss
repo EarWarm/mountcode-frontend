@@ -1,0 +1,130 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba($color: #000000, $alpha: 0.4);
+  z-index: 99;
+  transition: all .3s ease-in-out;
+
+  &__container {
+    background-color: $color-black-2;
+    border: .1rem solid rgba($color: $color-white, $alpha: 0.07);
+    max-width: 36.1rem;
+  }
+
+  &__header {
+    padding: 2.2rem 3.6rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &__body {
+    padding: 2rem 3.6rem;
+  }
+
+  &__footer {
+    padding: 1.5rem 3.6rem;
+    border-top: 1px solid #171921;
+  }
+
+  .popup__footer-text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 160%;
+    color: $color-gray-1;
+
+    a {
+      color: $color-blue-1;
+      transition: all .2s ease-in-out;
+      font-weight: bold;
+
+      &:hover {
+        color: $color-blue-1;
+        transition: all .2s ease-in-out;
+      }
+    }
+  }
+
+  &__close {
+    font-size: 1.2rem;
+    color: $color-gray-1;
+    cursor: pointer;
+
+    i::before {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    cursor: pointer;
+    color: $color-white;
+    font-weight: bold;
+  }
+}
+
+.popup-enter-active {
+  overflow: hidden;
+  animation: popup-background-fade .5s;
+  will-change: background;
+
+  .popup__container {
+    animation: popup-quick-enter .8s;
+    will-change: transform;
+  }
+}
+.popup-leave-active {
+  overflow: hidden;
+  animation: popup-background-fade .3s reverse;
+  will-change: background;
+
+  .popup__container {
+    animation: popup-quick-leave .3s;
+    will-change: transform;
+  }
+}
+
+@keyframes popup-background-fade {
+  0% {
+    background-color: rgba($color: #000000, $alpha: 0);
+  }
+  100% {
+    background-color: rgba($color: #000000, $alpha: 0.4);
+  }
+}
+
+@keyframes popup-quick-enter {
+  0% {
+    transform: translate3d(0, 100vh, 0);
+  }
+  30% {
+    transform: translate3d(0, -4rem, 0);
+  }
+  80% {
+    transform: translate3d(0, 0.5rem, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes popup-quick-leave {
+  100% {
+    transform: translate3d(0, 100vh, 0);
+  }
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+}

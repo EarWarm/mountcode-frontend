@@ -1,0 +1,164 @@
+.form {
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__radio {
+    position: relative;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+
+    input {
+      &:checked,
+      &:not(:checked)
+      {
+        opacity: 0;
+        position: absolute;
+      }
+
+      &:checked + label:after {
+        content: "";
+        position: absolute;
+        bottom: 50%;
+        transform: translateY(50%);
+        left: .2rem;
+        width: 1.4rem;
+        height: 1.4rem;
+        border-radius: 50%;
+        background: $color-blue-1;
+      }
+
+      & + label:before {
+        content: "";
+        width: 1.8rem;
+        height: 1.8rem;
+        margin-right: 1.5rem;
+        border: 0.1rem solid rgba($color: $color-gray-1, $alpha: .3);
+        border-radius: 50%;
+        background: #141723;
+      }
+    }
+
+    & label {
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      align-items: center;
+      color: $color-gray-1;
+      font-size: 1.6rem;
+
+      img {
+        margin-left: 1.5rem;
+      }
+    }
+  }
+
+  &__input {
+    display: flex;
+    flex-flow: column;
+
+    & label {
+      color: rgba($color: $color-gray-1, $alpha: .4);
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    & input {
+      height: 4.5rem;
+      background-color: rgba($color: $color-gray-1, $alpha: .05) !important;
+      padding-left: 1.5rem;
+      color: $color-gray-1;
+      font-size: 1.4rem;
+      transition: 0.2s;
+      border-left: 0.3rem solid rgba($color: $color-blue-1, $alpha: .6);
+
+      &:focus {
+        border-left: 0.3rem solid $color-blue-1;
+      }
+    }
+
+    & div {
+      color: $color-gray-1;
+      font-size: 1.4rem;
+      margin-top: 0.5rem;
+      line-height: 150%;
+
+      span {
+        color: $color-white;
+      }
+    }
+  }
+
+  &__checkbox {
+
+  }
+
+  &__input-error {
+    & input {
+      border-left: 0.3rem solid $warning-color;
+
+      &:focus {
+        border-left: 0.3rem solid $warning-color;
+      }
+    }
+  }
+
+  &__button-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.5rem;
+    height: 4.5rem;
+    background-color: $color-blue-1;
+    border: 0.3rem solid $color-blue-1;
+    font-size: 1.4rem;
+    transition: 0.2s;
+    color: #ffffff;
+
+    &:hover {
+      color: $color-black-2;
+      cursor: pointer;
+    }
+
+    &:disabled {
+      background-color: rgba($color: $color-gray-1, $alpha: .14);
+      border: 0.3rem solid rgba($color: $color-gray-1, $alpha: .14);
+    }
+  }
+
+  &__button-secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.5rem;
+    height: 4.5rem;
+    background-color: rgba($color: $color-gray-1, $alpha: .14);
+    font-size: 1.4rem;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: rgba($color: $color-gray-1, $alpha: .25);
+      cursor: pointer;
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 1.4rem;
+    color: rgba($color: $color-gray-1, $alpha: .56);
+    transition: color .2s ease-in-out;
+
+    &:hover {
+      transition: color .2s ease-in-out;
+      color: $color-blue-1;
+    }
+  }
+}

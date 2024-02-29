@@ -1,0 +1,16 @@
+html {
+    @supports (scrollbar-gutter: stable) {
+        scrollbar-gutter: stable;
+    }
+}
+
+body {
+    &::-webkit-scrollbar {
+        width: 6px;
+        transition: all 0.1s ease-in-out;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $color-blue-1;
+    }
+}

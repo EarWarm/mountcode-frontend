@@ -1,0 +1,37 @@
+@import "{scss}/_variables.scss";
+@import "{scss}/mixins/_breakpoints.scss";
+
+@import "{scss}/utilities/_reset.scss";
+@import "{scss}/utilities/_fonts.scss";
+
+* {
+  font-family: $font-family;
+  font-style: normal;
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  background-color: $color-black-1;
+  overflow-x: hidden;
+
+  &:has(.popup) {
+    overflow-y: hidden;
+  }
+}
+
+@import "{scss}/kit/scrollbar";
+@import "{scss}/kit/loader";
+@import "{scss}/kit/buttons";
+@import "{scss}/kit/popup";
+@import "{scss}/kit/form";
+@import "{scss}/kit/notifications";
+@import "{scss}/kit/dropdown";
+@import "{scss}/kit/container";
+@import "{scss}/kit/text";
+
+.main {
+  margin-top: 8rem;
+}
+

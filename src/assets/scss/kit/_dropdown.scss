@@ -1,0 +1,89 @@
+.dropdown {
+    position: relative;
+
+    &:before {
+        display: inline-block;
+        font-family: "Iconly", sans-serif !important;
+        font-weight: 400;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        line-height: 1;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        content: "\e005";
+
+        position: absolute;
+        top: 110%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2rem;
+        color: $color-gray-1;
+        transition: all .2s ease-in-out;
+        z-index: 2;
+    }
+
+    &__container {
+        width: max-content;
+        position: absolute;
+        top: 110%;
+        left: 50%;
+        transform: translateX(-50%) scale(.9) translateY(2rem);
+        transform-origin: center;
+        z-index: 1;
+
+        opacity: 0;
+        visibility: hidden;
+
+        background-color: $color-black-2;
+        border: .1rem solid rgba($color: $color-gray-1, $alpha: .1);
+        border-radius: .5rem;
+        padding: 1.5rem 2rem;
+        transition: all .1s ease-in-out;
+    }
+
+    &:hover {
+        .dropdown__container {
+            transition: all .1s ease-in-out;
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) scale(1) translateY(.5rem);
+        }
+
+        &:before {
+            transition: all .2s ease-in-out;
+            transform: translateX(-50%) translateY(.750rem);
+        }
+    }
+
+    .menu {
+
+        &__link {
+
+            color: $color-gray-1;
+            font-size: 1.8rem;
+            line-height: 2;
+            transition: all .2s ease-in-out;
+            cursor: pointer;
+
+            &:hover, &:hover a{
+                transition: all .2s ease-in-out;
+                color: $color-white;
+            }
+
+            a {
+                font-size: 1.8rem;
+                color: $color-gray-1;
+                transition: all .2s ease-in-out;
+            }
+        }
+
+        &__space {
+            margin-bottom: .2rem;
+        }
+    }
+
+    .menu-splitted {
+        display: flex;
+    }
+}

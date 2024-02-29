@@ -1,0 +1,53 @@
+@import '{scss}/variables';
+@import '{scss}/mixins/breakpoints';
+
+.authorization {
+
+  .authorization__tabs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    color: rgba($color: $color-gray-1, $alpha: .56);
+
+    span {
+      font-size: 2rem;
+    }
+  }
+
+  .authorization__tab {
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    cursor: pointer;
+  }
+
+  .authorization__tab-active {
+    color: $color-white;
+    font-weight: bold;
+  }
+
+  .popup__container {
+    max-width: 46.1rem;
+  }
+
+  .popup__footer {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 160%;
+    color: $color-gray-1;
+
+    a {
+      font-size: 1.3rem;
+      color: $color-blue-1;
+      transition: all .2s ease-in-out;
+      font-weight: bold;
+
+      &:hover {
+        color: $color-gray-1;
+        transition: all .2s ease-in-out;
+      }
+    }
+  }
+}

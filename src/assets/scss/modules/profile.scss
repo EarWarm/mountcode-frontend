@@ -1,0 +1,52 @@
+@import "{scss}/variables";
+
+.profile {
+  border-radius: 2.5rem;
+  background-color: $color-black-2;
+
+  &__header {
+    font-size: 1.8rem;
+    padding: .7rem 2.5rem;
+    border-bottom: .1rem $color-gray-2 solid;
+    color: $color-white;
+  }
+
+  &__body {
+    padding: 0 3.5rem 2rem 2rem;
+  }
+
+  &__img {
+    width: 24.5rem !important;
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: row;
+    gap: 1.7rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+
+  &__field {
+    padding-bottom: .3rem;
+    border-bottom: .1rem $color-gray-2 solid;
+
+    &, time {
+      font-size: 1.8rem;
+      color: $color-white;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 5rem;
+  }
+}

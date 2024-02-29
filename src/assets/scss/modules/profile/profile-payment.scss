@@ -1,0 +1,74 @@
+@import "{scss}/variables";
+@import "{scss}/mixins/breakpoints";
+
+
+
+.profile-payment{
+  margin-top: 10rem;
+
+  &__body {
+    background-color: $color-black-2;
+    border-radius: 2.5rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+
+    @include media-breakpoint-down(lg) {
+      grid-template-columns: 2fr 1.5fr;
+    }
+    @include media-breakpoint-down(md) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__payment-methods {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem 0 1.5rem 1.5rem;
+
+    @include media-breakpoint-down(xl) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include media-breakpoint-down(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-breakpoint-down(md) {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 0 1.5rem 1.5rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__payment-method {
+    padding: 6.5rem 2.5rem;
+    border: .1rem solid $color-gray-1;
+    border-radius: 2.5rem;
+
+    img {
+      width: 100%;
+    }
+
+    &:hover, &-active {
+      border: .1rem solid $color-blue-1;
+      box-shadow: inset 0 0 1rem .5rem $color-blue-1;
+    }
+  }
+
+  &__details {
+    border: 1px solid $color-gray-1;
+    border-radius: 0 2.5rem 2.5rem 0;
+    padding: 3rem 3rem 1.5rem 3rem;
+
+    @include media-breakpoint-down(md) {
+      border-radius: 2.5rem 2.5rem 0 0;
+    }
+  }
+}

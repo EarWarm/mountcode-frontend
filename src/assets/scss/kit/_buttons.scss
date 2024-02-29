@@ -1,0 +1,111 @@
+.button-solid-blue {
+  z-index: 1;
+  position: relative;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 1.5rem 3rem;
+
+  font-weight: bold;
+  cursor: pointer;
+  color: $color-white;
+  font-size: 1.6rem;
+
+  &:has(i) {
+    display: flex;
+
+    i {
+      color: $color-white;
+      font-size: 1.6rem;
+    }
+  }
+
+  &::before {
+    transition: .2s all ease-in-out;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $color-blue-1;
+    transform: skew(-30deg);
+    border: 3px solid $color-blue-1;
+  }
+
+  &:not(:disabled):hover::before {
+      transition: .2s all ease-in-out;
+      background-color: transparent;
+  }
+
+  &:disabled {
+    cursor: default;
+    color: rgba($color: $color-gray-1, $alpha: .8);
+  }
+
+  &:disabled::before {
+    background-color: rgba($color: $color-gray-1, $alpha: .1);
+    border: 3px solid rgba($color: $color-gray-1, $alpha: .8);
+  }
+
+  &:disabled i {
+    color: rgba($color: $color-gray-1, $alpha: .8);
+  }
+}
+
+.button-bordered-inverted-gray {
+  z-index: 1;
+  position: relative;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 1.5rem 3rem;
+
+  font-weight: bold;
+  cursor: pointer;
+  color: $color-gray-1;
+  font-size: 1.6rem;
+
+  &:has(i) {
+    display: flex;
+
+    i {
+      color: $color-gray-1;
+      font-size: 1.6rem;
+    }
+  }
+
+  &::before {
+    transition: .2s all ease-in-out;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($color: $color-gray-1, $alpha: .3);
+    transform: skew(-30deg);
+    border: 3px solid $color-gray-1;
+  }
+
+  &:not(:disabled):hover::before {
+    transition: .2s all ease-in-out;
+    background-color: transparent;
+  }
+
+  &:disabled {
+    cursor: default;
+    color: rgba($color: $color-gray-1, $alpha: .5);
+  }
+
+  &:disabled::before {
+    background-color: rgba($color: $color-gray-1, $alpha: .1);
+    border: 3px solid rgba($color: $color-gray-1, $alpha: .5);
+  }
+
+  &:disabled i {
+    color: rgba($color: $color-gray-1, $alpha: .8);
+  }
+}

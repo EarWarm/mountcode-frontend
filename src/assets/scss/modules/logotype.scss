@@ -1,0 +1,23 @@
+@import "{scss}/variables";
+
+.logotype {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__project {
+    font-weight: bold;
+    font-size: 2rem;
+    color: $color-gray-1;
+    span {
+      font-size: 2rem;
+      font-weight: bold;
+      color: $color-black-2;
+    }
+  }
+}
